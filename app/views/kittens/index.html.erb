@@ -1,0 +1,12 @@
+<h1>Kittens</h1>
+
+<div class="row">
+<% @kittens.each do |kitten| %>
+    <div class="col-md-4">
+        <h4><%= link_to kitten.name, kitten_path(kitten) %></h4>
+        <p><%= "Age: #{kitten.age}" %></p>
+    </div>
+<% end %>
+</div>
+
+<%= link_to "Create New Kitten", new_kitten_path, class: "btn btn-primary" %>

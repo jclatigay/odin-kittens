@@ -1,0 +1,28 @@
+<%= form_with model: kitten do |form| %>
+
+    <% if form.object.errors.any? %>
+        <div class="alert alert-danger">
+            <%= form.object.errors.full_messages.join(". ") %>
+        </div>
+    <% end %>
+
+    <div class="mb-3">
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+    </div>
+    <div class="mb-3">
+        <%= form.label :age %>
+        <%= form.number_field :age %>
+    </div>
+    <div class="mb-3">
+        <%= form.label :cuteness %>
+        <%= form.number_field :cuteness %>
+    </div>
+    <div class="mb-3">
+        <%= form.label :softness %>
+        <%= form.number_field :softness %>
+    </div>
+    <div class="mb-3">
+        <%= form.submit class: "btn btn-primary" %>
+    </div>
+<% end %>
